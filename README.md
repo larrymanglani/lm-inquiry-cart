@@ -1,65 +1,107 @@
-=== Larry Manglani's Inquiry Cart ===
-Contributors: larrymanglani
-Tags: inquiry, cart, quote request, product inquiry, lead generation, contact form
-Requires at least: 5.0
-Tested up to: 6.9
-Stable tag: 1.0.0
-Requires PHP: 7.0
-License: GPLv2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
+# Larry Manglani's Inquiry Cart
 
-Add a secure inquiry cart to your website that allows users to ask questions about specific posts or products.
+[![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/lm-inquiry-cart?label=WordPress.org)](https://wordpress.org/plugins/lm-inquiry-cart/)
+[![License](https://img.shields.io/github/license/larrymanglani/lm-inquiry-cart)](LICENSE)
+[![WordPress Tested](https://img.shields.io/wordpress/v/lm-inquiry-cart)](https://wordpress.org/plugins/lm-inquiry-cart/)
 
-== Description ==
-Larry Manglani's Inquiry Cart is a secure, modernized fork of the original Inquiry Cart plugin. It allows visitors to add items to a "virtual cart" as they browse your site and then submit a single inquiry for all selected items.
+**Secure WordPress plugin for B2B product inquiries and lead generation.**
 
-It's perfect for B2B websites, wholesalers, manufacturers, and service providers who want to generate leads rather than just process sales.
+## Features
 
-**Key Features:**
-* 🛡️ **Secure:** Fully patched against CSRF vulnerabilities with proper nonce verification.
-* 🍪 **Cookie-Based:** Lightweight cart that works across all pages without bloating your database.
-* ✨ **Modern UI:** Clean shortcodes for "Add to Cart" buttons and the final inquiry form.
-* 📱 **Responsive:** Works seamlessly on desktop and mobile devices.
-* 📧 **Configurable:** Custom email recipients, subjects, and user messages.
-* 🔄 **Cross-Tab Sync:** Real-time cart updates across browser tabs.
-* ⚡ **Caching Compatible:** Works perfectly with WP Rocket, W3 Total Cache, LiteSpeed, etc.
+Larry Manglani's Inquiry Cart transforms your WordPress site into a powerful lead generation tool, allowing visitors to build a customized inquiry by adding multiple products to a virtual cart before submitting a single, comprehensive form.
 
-== Installation ==
-1. Upload the `lm-inquiry-cart` folder to the `/wp-content/plugins/` directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Navigate to **Settings → Inquiry Cart** to configure your email address.
-4. Use the shortcode `[lm_add_to_inquiry]` to add items and `[lm_inquiry_cart]` to display the cart form.
+- Virtual Inquiry Cart: Let visitors add multiple products and submit one comprehensive inquiry instead of multiple forms.
+- Enterprise Security: Fully patched against CSRF vulnerabilities with WordPress nonce verification.
+- Cookie-Based System: Lightweight cart that persists across pages without bloating your database.
+- Cross-Tab Sync: Real-time cart updates across browser tabs for seamless user experience.
+- Simple Shortcodes: Easy-to-use shortcodes work with any theme or page builder.
+- Mobile Responsive: Works seamlessly on desktop and mobile devices.
+- Caching Compatible: Works perfectly with WP Rocket, W3 Total Cache, LiteSpeed, and other caching solutions.
 
-== Frequently Asked Questions ==
-= How do I add a product to the cart? =
-Use the shortcode `[lm_add_to_inquiry title="Product Name"]` anywhere on your site. You can also add `price="..."` or `sku="..."` for additional details.
+## Screenshots
 
-= Where do the inquiries go? =
-By default, inquiries are emailed to your site's admin email. You can change the recipient address in **Settings → Inquiry Cart**.
+(Place your screenshot-1.png, screenshot-2.png, and screenshot-3.png files in an assets/ folder at the root of the repository to display these.)
 
-= Does it work with caching plugins? =
-Yes. The cart uses client-side cookies and JavaScript, so it works perfectly with WP Rocket, W3 Total Cache, LiteSpeed, and other caching solutions.
-
-= Can I require users to log in? =
-The free version allows guest inquiries. User role restrictions can be added via custom code or in a future Pro version.
-
-= Is my data secure? =
-Yes. The plugin uses WordPress nonce verification for all form submissions and AJAX requests, protecting against CSRF attacks.
-
-== Screenshots ==
 1. The "Add to Inquiry" button on a product listing page.
 2. Inquiry Cart form showing selected items and submission fields.
 3. Plugin settings page for configuring email and messages.
 
-== Changelog ==
-= 1.0.0 =
-* Initial public release of the Larry Manglani fork.
-* Fixed critical CSRF security vulnerability with proper nonce implementation.
-* Added `lm_ic_` namespacing to prevent function conflicts.
-* Improved cookie handling with modern `SameSite=Lax` and automatic cleanup on submission.
-* Added cross-tab synchronization for real-time cart updates.
-* Optimized JavaScript for better performance and cross-browser compatibility.
+## Installation
 
-== Upgrade Notice ==
-= 1.0.0 =
-First release. Please test on a staging site before deploying to production.
+### From WordPress.org
+1. Go to Plugins > Add New in your WordPress admin.
+2. Search for "Larry Manglani's Inquiry Cart".
+3. Click Install Now then Activate.
+
+### Manual Installation
+1. Download the plugin from WordPress.org.
+2. Upload the lm-inquiry-cart folder to /wp-content/plugins/.
+3. Activate through the Plugins menu in WordPress.
+4. Configure settings in Settings > Inquiry Cart.
+
+## Usage
+
+### Add Products to Cart
+Use the [lm_add_to_inquiry] shortcode anywhere on your site (pages, posts, widgets).
+
+[lm_add_to_inquiry title="Product Name" price="$99" sku="PCL-001"]
+
+Available Parameters:
+- title (required): Product or item name.
+- price (optional): Product price.
+- sku (optional): Product SKU or unique identifier.
+- class (optional): Custom CSS class for styling.
+
+### Display Cart Form
+Use the [lm_inquiry_cart] shortcode on the page where you want the inquiry form and cart summary to appear.
+
+[lm_inquiry_cart]
+
+## Documentation
+
+For detailed documentation, tutorials, and Pro version features (Email Templates, CRM Sync, Analytics, etc.), visit:
+larrymanglani.com
+
+## Contributing
+
+Contributions are welcome! Please follow these guidelines:
+1. Fork the repository.
+2. Create a feature branch (git checkout -b feature/AmazingFeature).
+3. Commit your changes (git commit -m 'Add some AmazingFeature').
+4. Push to the branch (git push origin feature/AmazingFeature).
+5. Open a Pull Request.
+
+## Development
+
+### Requirements
+- WordPress 5.0+
+- PHP 7.0+
+- jQuery
+
+### Coding Standards
+This plugin follows WordPress Coding Standards.
+
+## Changelog
+
+### 1.0.0 (2026-05-03)
+- Initial public release.
+- Fixed critical CSRF security vulnerability with proper nonce implementation.
+- Added lm_ic_ namespacing to prevent function conflicts.
+- Improved cookie handling with modern SameSite=Lax and automatic cleanup on submission.
+- Added cross-tab synchronization for real-time cart updates.
+- Optimized JavaScript for better performance and cross-browser compatibility.
+
+## License
+
+This plugin is licensed under GPLv2 or later.
+
+## Author
+
+Larry Manglani
+- Website: larrymanglani.com
+- GitHub: @larrymanglani
+
+## Acknowledgments
+
+- Original Inquiry Cart plugin (forked and modernized for security and performance).
+- WordPress community for inspiration and support.
